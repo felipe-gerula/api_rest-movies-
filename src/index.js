@@ -15,6 +15,7 @@ app.use(express.json());
 //rutas
 app.use(require("./rutas/index"));
 app.use("/api/movies",require("./rutas/movies"));
+app.use("/api/users",require("./rutas/users"));
 
 //empezar servidor
 app.listen(app.get("port") , () => {
