@@ -20,6 +20,24 @@ router.post("/",(req , res) =>{
   }
 });
 
+router.put("/:id",(req,res) =>{
+    const{id} = req.params;
+    const {titulo,director,año,puntuacion} = req.body; 
+    if(titulo && director && año && puntuacion){
+        _.each(movies,(movie,i)=>{
+          if(movie.id == id){
+              movie.titulo = titulo;
+              movie.director = director;
+              movie.puntuacion = puntuacion;
+              movie.año = año
+          }
+        });
+        res.json(movies);
+    }else{
+        res.json({error : "Ocurrio un error en la actualizacion"});
+    }
+});
+
 router.delete("/:id",(req,res) =>{
     const {id} = req.params;
     _.each(movies,(movie,i) =>{
