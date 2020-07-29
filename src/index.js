@@ -13,9 +13,8 @@ app.use(express.urlencoded({extended : false}));
 app.use(express.json());
 
 //rutas
-app.get("/", (req , res) =>{
-    res.json({"titulo" : "hello world"});
-})
+app.use(require("./rutas/index"));
+app.use("/api/movies",require("./rutas/movies"));
 
 //empezar servidor
 app.listen(app.get("port") , () => {

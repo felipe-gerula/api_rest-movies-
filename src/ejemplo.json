@@ -1,0 +1,16 @@
+[
+    {
+        "id" : "1" ,
+        "titulo" : "Interestelar",
+        "director" : "Christopher Nolan",
+        "año" : "2014",
+        "puntuacion" : 8.6 
+    },
+    {
+        "id" : "2" ,
+        "titulo" : "Origen",
+        "director" : "Christopher Nolan",
+        "año" : "2010",
+        "puntuacion" : 8.8
+    }
+]
