@@ -4,13 +4,20 @@ const morgan = require("morgan");
 
 
 //configuraciones
+app.set("port" , process.env.PORT || 3000);
+app.set("json spaces" , 2);
 
 //middlewares
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended : false}));
 app.use(express.json());
 
+//rutas
+app.get("/", (req , res) =>{
+    res.json({"titulo" : "hello world"});
+})
+
 //empezar servidor
-app.listen(3000 , () => {
-  console.log(`Server en puerto ${3000}`);
+app.listen(app.get("port") , () => {
+  console.log(`Server en puerto ${app.get("port")}`);
 });
